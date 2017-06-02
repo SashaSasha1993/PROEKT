@@ -1,0 +1,78 @@
+body {
+    background-color: #EBEDF0;
+}
+
+#menuOnTop li {
+	display: inline;
+    margin: 15px;
+    
+}
+
+#menuOnTop {
+	text-align: right;
+    margin-right: 23px;
+    
+}
+
+#menuOnTop a {
+	color: beige;
+    
+}
+
+#languagesOnTop  {
+    color: #098896;
+	padding: 15px;
+    font-size: 13px;
+    margin-right: 15px;
+}
+
+#languagesOnTop a {
+    font-size: 18px;
+	color: #2AB9CA;
+    padding: 14px;
+}
+
+.btn {
+	border: none; !important
+    background-color: #BBDD6A; !important;
+    color: #098896;
+}
+
+#green {
+	background-color: #BBDD6A;
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#C1E26C, #85A835); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#C1E26C, #85A835); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#C1E26C, #85A835); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#C1E26C, #85A835); /* Standard syntax */
+}
+
+#imglogo {
+	padding: 15px;
+    margin: 15px;
+}
+
+.menuOnTop2 a {
+    color: #098896;
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+
+.menuOnTop2 {
+	margin-top: 50px;
+}
+
+.whole {
+	text-align: right;
+}
+
+.retail {
+	text-align: left;
+}
+
+.search {
+	text-align: center;
+}
+

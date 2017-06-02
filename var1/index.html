@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Starter Template</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" href="home.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-app="myApp">
+
+
+    <div id="green">
+        <div id="languagesOnTop" class="row">
+
+            <div class="col-xs-7 col-lg-9">Change a language: <a href="home-en.html">English</a><span> </span><a href="home-ru.html">Russian</a></div>
+
+            <div class="search col-xs-5 col-lg-3">
+
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter your key word">
+                    </div>
+                    <button type="button" class="btn btn-default">Search</button>
+                </form>
+            </div>
+        </div>
+
+        <ul id="menuOnTop">
+            <li><a href="home-en.html">HOME</a></li>
+            <li><a href="aboutUs-en.html">ABOUT US</a></li>
+            <li><a href="contactUs-en.html">CONTACT US</a></li>
+            <li><a href="catalog-rs-en.html">CATALOG</a></li>
+            <li><a href="news-en.html">NEWS</a></li>
+            <li><a href="faq-en.html">FAQ</a></li>
+            <li><a href="sizeTable-en.html">SIZE TABLE</a></li>
+
+            <li>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default"><a href="info-en.html">SHIPPING AND PAYMENT</a></button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+<!--    <span class="sr-only">Toggle Dropdown</span>-->
+  </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">How to buy</a></li>
+                        <li><a href="#">Shipping and payment</a></li>
+                        <li><a href="#">Discount system </a></li>
+
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#"><img src="images/user_man.png"></a>
+            </li>
+            <li><a href="logIn-en">LOGIN IN</a></li>
+            <li><a href="signUp-en">SIGN UP</a></li>
+        </ul>
+    </div>
+
+    <div class=" menuOnTop2 row">
+        <div class="imgLogo col-xs-3 col-md-1 col-lg-2">
+            <a href="#"><img class="imgLogo" src="images/nanoLogo.png"></a>
+        </div>
+        <div class=" whole col-xs-3 col-md-5 col-lg-4">
+            <a href="wholeSale-en.html">
+                <h1>Whole Sale</h1>
+                <div>Drop Shipping</div>
+            </a>
+        </div>
+        <div class=" retail col-xs-3 col-md-5 col-lg-4">
+            <a href="retailSale-en.html">
+                <h1>Retail Sale</h1>
+            </a>
+        </div>
+        <div class=" imgLogo col-xs-3 col-md-1 col-lg-2">
+            <a href="#"><img src="images/pelucheLogo.png"></a>
+        </div>
+    </div>
+
+
+    <!--
+        <div class="row">
+           <div class="col-xs-5"></div>
+           <div class="search col-xs-4">
+           
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter your key word">
+                </div>
+                <button type="button" class="btn btn-default">Search</button>
+            </form></div>
+            <div class="col-xs-3"></div>
+        </div>
+-->
+
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3" ></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6" ></li>
+            <li data-target="#myCarousel" data-slide-to="7"></li>
+            <li data-target="#myCarousel" data-slide-to="8"></li>
+            <li data-target="#myCarousel" data-slide-to="9" ></li>
+            <li data-target="#myCarousel" data-slide-to="10"></li>
+
+
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="/images/header1.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="/images/header2.jpg" alt="Chicago">
+            </div>
+
+            <div class="item">
+                <img src="/images/header3.jpg" alt="New York">
+            </div>
+            <div class="item">
+                <img src="/images/header4.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="/images/header5.jpg" alt="Chicago">
+            </div>
+
+            <div class="item">
+                <img src="/images/header6.jpg" alt="New York">
+            </div>
+            <div class="item">
+                <img src="/images/header7.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="/images/header8.jpg" alt="Chicago">
+            </div>
+
+            <div class="item">
+                <img src="/images/header9.jpg" alt="New York">
+            </div>
+            <div class="item">
+                <img src="/images/header10.jpg" alt="Los Angeles">
+            </div>
+
+            <div class="item">
+                <img src="/images/header11.jpg" alt="Chicago">
+            </div>
+
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="myclass glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div>Online store Martin Kids provides perfect serves for anyone. Bla bla bla/ Some text about us.</div>
+    
+<!--
+    <div class="row">
+        
+        <div class="col-xs-8">
+            <fieldset><legend>NANO Catalog</legend>
+            <div class="row">
+                <div class="col-xs-5">
+                    <div><a href="boysCasual-en.html"><img src="images/boysPic.jpg"></a></div>
+                    
+                    <div>
+                    <h3>CASUAL</h3>
+                    <h2>BOYS</h2>
+                    <h3>OUTWEAR</h3>
+                    </div>
+                    
+                    <div><a href="boysOutwear.html"><img src="images/boysOutwear.jpg"></a></div>
+                </div>
+                
+            
+           
+                <div class="col-xs-5">
+                    <div><a href="girlsCasual-en.html"><img src="images/girlsPic.jpg"></a></div>
+                    
+                    <div>
+                    <h3>CASUAL</h3>
+                    <h2>GIRLS</h2>
+                    <h3>OUTWEAR</h3>
+                    </div>
+                    
+                    <div><a href="girlsOutwear.html"><img src="images/girlsOutwear.jpg"></a></div>
+                </div>
+               
+            </div>
+            </fieldset>
+        </div>
+        
+        <div class="col-xs-4"></div>
+        
+    </div>
+    
+-->
+
+
+    <div>
+        <h1>NEWS AND SALES</h1>
+    </div>
+    <div>
+        <a href="sales-en.html"><img src="images/sales1.png"></a>
+    </div>
+
+    <ul>
+
+        <li><a ng-href="/">HOME</a></li>
+
+        <li><a ng-href="#!/catalog-retail">CATALOG</a></li>
+        <li><a ng-href="#!/aboutUs">ABOUT US</a></li>
+        <li><a ng-href="#/contact">CONTACT US</a></li>
+        <li><a ng-href="#!/news">NEWS</a></li>
+        <li><a ng-href="#!/SizeTable">SIZE TABLE</a></li>
+        <li><a ng-href="#!/faq">FAQ</a></li>
+        <li><a ng-href="#!/shippingPayment">SHIPPING AND PAYMENT</a></li>
+        <li><a ng-href="#!/signIn"><img src="images/user_man.png"></a></li>
+        <li><a ng-href="#!/signIn">SIGN IN</a></li>
+        <li><a ng-href="#!/signUp">SIGN UP</a></li>
+
+    </ul>
+    
+    
+    <div ng-view></div>
+    <!-- /.container -->
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+
+</body>
+
+</html>
