@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'API_app',
     'rest_framework',
     'corsheaders',
+    'API_app'
 ]
 
 MIDDLEWARE = [
@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'productAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'catalog',
-        'USER': 'root',
-        'PASSWORD': 'golovkova1993',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mwrpnarz',
+        'USER': 'mwrpnarz',
+        'PASSWORD': 'szfvlKhfzf2MPQkw2CGMjWnxmIgA0R3h',
+        'HOST': 'stampy.db.elephantsql.com',
+        'PORT': '5432',
     }
 }
 

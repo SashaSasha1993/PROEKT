@@ -1,6 +1,6 @@
 var app = angular.module("myApp", ["ngRoute"]);
 
-var api = 'http://127.0.0.1:8000/productID/?format=api';
+var api = 'http://127.0.0.1:8000/api/product/?format=json';
 
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider

@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.ListCreateProductID.as_view(), name='ProductID'),
-    url(r'^$', views.ListCreateProductVar.as_view(), name='ProductVar'),
-
+    url(r'^product/$', views.ListCreateProduct.as_view(), name='Product'),
+    url(r'^productvar/$', views.ListCreateProductVar.as_view(), name='ProductVar'),
+    url(r'^category/$', views.ListCreateCategory.as_view(), name='Category'),
 ]
