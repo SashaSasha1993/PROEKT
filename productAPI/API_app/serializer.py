@@ -2,9 +2,9 @@ from . import models
 
 from rest_framework import serializers
 
-class ProductIDSerializer (serializers.ModelSerializer):
+class ProductSerializer (serializers.ModelSerializer):
     class Meta:
-        model = models.ProductID
+        model = models.Product
         fields = '__all__'
 
 
@@ -13,4 +13,7 @@ class ProductVarSerializer(serializers.ModelSerializer):
         model = models.ProductVar
         fields = '__all__'
 
-
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Category
+        fields = '__all__'

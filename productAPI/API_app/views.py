@@ -6,10 +6,14 @@ from . import serializer
 # Create your views here.
 
 
-class ListCreateProductID(generics.ListCreateAPIView):
-    queryset=models.ProductID.objects.all()
-    serializer_class =serializer.ProductIDSerializer
+class ListCreateProduct(generics.ListCreateAPIView):
+    queryset=models.Product.objects.all()
+    serializer_class =serializer.ProductSerializer
 
 class ListCreateProductVar(generics.ListCreateAPIView):
     queryset=models.ProductVar.objects.all()
     serializer_class =serializer.ProductVarSerializer
+    
+class ListCreateCategory(generics.ListCreateAPIView):
+    queryset=models.Category.objects.all()
+    serializer_class =serializer.CategorySerializer

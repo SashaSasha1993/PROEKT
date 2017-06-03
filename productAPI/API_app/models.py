@@ -9,57 +9,6 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-
-class Allproducts(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'allproducts'
-
-
-class ApiAppProductid(models.Model):
-    article = models.CharField(db_column='ARTICLE', primary_key=True, max_length=200)  # Field name made lowercase.
-    category = models.CharField(db_column='CATEGORY', max_length=500)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=500)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=500)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=500)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=500)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=500)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'api_app_productid'
-
-
-class ApiAppProductvar(models.Model):
-    color = models.CharField(db_column='COLOR', max_length=500)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=500)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=500)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=500)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=500)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=500)  # Field name made lowercase.
-    article = models.ForeignKey(ApiAppProductid, models.DO_NOTHING, db_column='ARTICLE_id')  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'api_app_productvar'
-
-
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=80)
 
@@ -170,140 +119,69 @@ class DjangoSession(models.Model):
         db_table = 'django_session'
 
 
-class Nano1415(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
+        
+# Create your models here:
+class Category(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    PARENTCATEGORY = models.ForeignKey("self", null = True, blank = True)
+    def __str__(self):
+        return self.NAME
 
-    class Meta:
-        managed = False
-        db_table = 'nano14_15'
+class Brand(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
+    
+class Material(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
+    
+class Season(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
+    
+class Age(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
 
+class Size(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
 
-class Nano1617(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
+class Color(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
 
-    class Meta:
-        managed = False
-        db_table = 'nano16_17'
+class Gender(models.Model):
+    NAME = models.CharField(max_length=500, primary_key = True)
+    def __str__(self):
+        return self.NAME
+    
+class Product(models.Model):
 
-
-class NanodemiSeason(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'nanodemi_season'
-
-
-class PeluchedemiSeason(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'peluchedemi_season'
-
-
-class Peluchesales(models.Model):
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    article = models.CharField(db_column='ARTICLE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    temprature = models.CharField(db_column='TEMPRATURE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'peluchesales'
-
-
-class ProductID(models.Model):
-    article = models.CharField(db_column='ARTICLE', max_length=200,primary_key=True)  # Field name made lowercase.
-    category = models.CharField(db_column='CATEGORY', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    season = models.CharField(db_column='SEASON', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material1 = models.CharField(db_column='MATERIAL1', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    material2 = models.CharField(db_column='MATERIAL2', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    description = models.CharField(db_column='DESCRIPTION', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    brand = models.CharField(db_column='BRAND', max_length=300, blank=True, null=True)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'productid'
-
+    ARTICLE = models.CharField(max_length=200, primary_key = True)
+    CATEGORY = models.ForeignKey(Category, null = True, blank = True)
+    SEASON = models.ManyToManyField(Season, blank = True)
+    MATERIALS = models.ManyToManyField(Material, blank = True)
+    DESCRIPTION = models.CharField(max_length=500, null = True, blank = True)
+    BRAND = models.ForeignKey(Brand, null = True, blank = True)
+    def __str__(self):
+        return self.ARTICLE
 
 class ProductVar(models.Model):
-    article = models.ForeignKey(ProductID,db_column='ARTICLE')  # Field name made lowercase.
-    color = models.CharField(db_column='COLOR', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    gender = models.CharField(db_column='GENDER', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    wholeprice = models.CharField(db_column='WHOLEPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    retailprice = models.CharField(db_column='RETAILPRICE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    inventory = models.IntegerField(db_column='INVENTORY', blank=True, null=True)  # Field name made lowercase.
-    age = models.CharField(db_column='AGE', max_length=300, blank=True, null=True)  # Field name made lowercase.
-    size = models.CharField(db_column='SIZE', max_length=300, blank=True, null=True)  # Field name made lowercase.
+    ARTICLE = models.ForeignKey(Product)
+    COLOR = models.ForeignKey(Color, null = True, blank = True)
+    GENDER = models.ForeignKey(Gender, null = True, blank = True)
+    WHOLEPRICE = models.DecimalField(max_digits=10, decimal_places=2, null = True, blank = True)
+    RETAILPRICE = models.DecimalField(max_digits=10, decimal_places=2, null = True, blank = True)
+    INVENTORY = models.IntegerField(null = True, blank = True)
+    AGE = models.ForeignKey(Age, null = True, blank = True)
+    SIZE = models.ForeignKey(Size, null = True, blank = True)
+    def __str__(self):
+        return '%s %s' % (self.ARTICLE, self.COLOR)
 
-    class Meta:
-        managed = False
-        db_table = 'productvar'
